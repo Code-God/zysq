@@ -1,0 +1,283 @@
+/* CSS Document */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+img {
+    vertical-align: top;
+    border: none;
+}
+a {
+    text-decoration: none;
+}
+a:link {
+    color: none;
+}
+a:visited {
+    color: none;
+}
+a:hover {
+    color: none;
+}
+a:active {
+    color: none;
+}
+.clearboth {
+    clear: both;
+}
+input {
+    font-family: Microsoft YaHei;
+}
+a,
+button,
+input,textarea{
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+    /*-webkit-appearance: none;*/
+    outline:none;
+    font-family: Microsoft YaHei;
+}
+ul,
+li,
+ol,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+form.dt,
+dl,
+dd,
+figure,
+menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+article,
+aside,
+dialog,
+footer,
+header,
+section,
+footer,
+nav,
+figure,
+menu,
+time,
+address {}
+.pull-l {
+    float: left;
+    display: block;
+}
+.pull-r {
+    float: right;
+    display: block;
+}
+
+/*********************************/
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Microsoft YaHei, simsun;
+    font-size: 16px;
+    background: #f0f0f0;
+    text-align: center;
+}
+
+/*********************************/
+
+
+/**************************************/
+
+#mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 100000;
+    display: none;
+}
+
+/*********************************/
+
+.main {
+    position: relative;
+    margin: 0 auto;
+    padding:0;
+    width: 100%;
+}
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+    position: relative;
+    min-height: 1px;
+    float: left;
+}
+.col-12 {
+    width: 100%;
+}
+.col-11 {
+    width: 91.66666667%;
+}
+.col-10 {
+    width: 83.33333333%;
+}
+.col-9 {
+    width: 75%;
+}
+.col-8 {
+    width: 66.66666667%;
+}
+.col-7 {
+    width: 58.33333333%;
+}
+.col-6 {
+    width: 50%;
+}
+.col-5 {
+    width: 41.66666667%;
+}
+.col-4 {
+    width: 33.33333333%;
+}
+.col-3 {
+    width: 25%;
+}
+.col-2 {
+    width: 16.66666667%;
+}
+.col-1 {
+    width: 8.33333333%;
+}
+/**********/
+.clear{
+    clear:both;
+}
+.m-t-10{
+    margin-top: 10px;
+}
+.m-t-20{
+    margin-top: 20px;
+}
+.modular_t{
+    padding-top: 5px;
+    border-bottom: 1px solid #e1e1e1;
+    background: #ffffff;
+}
+.modular{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+    background: #ffffff;
+}
+.l_b_solid{
+    border-bottom: 1px solid #e1e1e1;
+}
+.l_b_dotted{
+    border-bottom: 1px dotted #e1e1e1;
+}
+/*******************/
+footer{
+    position: relative;
+    width: 100%;
+    height:3.5rem;
+}
+nav{
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    padding: 5px 0;
+    width: 100%;
+    display: flex;
+    border-top:1px solid #d1d1d1;
+}
+nav a{
+    flex: 1;
+    float: left;
+    width: 25%;
+    color: #878787;
+}
+nav ul li{
+    font-size: 0.75rem;
+}
+nav ul li:first-child{
+    font-size: 1.0rem;
+}
+nav ul:hover,nav ul.one{
+    color: #7e147e;
+    font-size: 0.75rem;
+}
+.display_n{
+    display: none;
+}
+
+/*********************/
+.box {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    width: 60%;
+    padding: 10px 0;
+    background: #ffffff;
+    z-index: 100;
+    box-shadow: 0px 0px 3px #000;
+    display: none;
+    z-index: 9999999;
+    font-size: 0.875rem;
+    border-radius:5px;
+}
+.box figure{
+    width: 30%;
+    height: 60px;
+    float: left;
+    background: url("../images/icon_1.png") no-repeat center;
+    background-size: 60%;
+}
+.box ul{
+    margin-top: 10px;
+    float: left;
+    font-size: 0.875rem;
+    text-align: left;
+    position: relative;
+    color:#999999;
+    width: 70%;
+}
+.box ul li a{
+    font-size: 0.625rem;
+    color:#7e147e;
+}
+.box ul li p{
+    font-size: 0.75rem;
+    color:#7e147e;
+}
+.box .close_box:after{
+    position: absolute;
+    top:0px;
+    right: 5px;
+    content: "\e608";
+    font-size: 1.4rem;
+    color:#7e147e;
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,230 @@
+body{
+    font-size: 14px;
+}
+
+.bg{
+    background-color: #F1F1F1;
+}
+
+.multiple{
+    zoom: 0.5;
+    -moz-transform:scale(0.5);
+    -moz-transform-origin:top left;
+}
+
+/*head*/
+.toAttention{
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    font-size: 12px;
+    display: inline-block;
+    float: left;
+    border: 1px solid #DB99DF;
+    text-align: center;
+    border-radius: 3px;
+    color: #DB99DF;
+    position: absolute;
+    top: 12px;
+    right: 15px;
+}
+.toAttention i {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-top: -2px;
+    zoom: 0.3;
+    -moz-transform: scale(0.3);
+    -moz-transform-origin: top left;
+    background: url(../imgs/add-Rimless.svg) no-repeat center center;
+}
+.link-img{
+    width: 16px;
+    height:16px;
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: -2px;
+    vertical-align: middle;
+    background: url(../imgs/sc-NotIncome.svg) no-repeat center center;
+}
+.ewm-img{
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    background: url(../imgs/ewm-img.png) no-repeat center center;
+}
+/*head end*/
+
+.contend{
+    padding-bottom: 60px;
+    position: relative;
+}
+
+
+.blur{
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -ms-filter: blur(5px);
+    -o-filter: blur(5px);
+    filter: blur(5px);
+}
+
+
+/*fixed-menu*/
+.fixed-menu{
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #FEFEFE;
+    z-index: 100;
+    border-top: 1px solid #EAECED;
+}
+.fixed-menu ul{
+    padding-top: 8px;
+}
+.fixed-menu ul li{
+    width: 33.3333333%;
+    float: left;
+}
+.fixed-menu ul li a{
+    display: block;
+    text-align: center;
+}
+.fixed-menu ul .cur a p{
+    color: #811A81;
+}
+.fixed-menu-img{
+    width: 47px;
+    height: 47px;
+    display: inline-block;
+    background: url("../imgs/icons.png") no-repeat;
+    zoom: 0.5;
+    -moz-transform:scale(0.5);
+    -moz-transform-origin:top left;
+}
+.fixed-menu-img-mora{
+    background-position: 0px -4px;
+}
+.cur .fixed-menu-img-mora{
+    background-position: -210px -4px;
+}
+.fixed-menu-img-pk{
+    background-position: -72px -4px;
+}
+.cur .fixed-menu-img-pk{
+    background-position: -282px -4px;
+}
+.fixed-menu-img-my{
+    background-position: -142px -2px;
+}
+.cur .fixed-menu-img-my{
+    background-position: -352px -2px;
+}
+
+.fixed-menu ul li a p{
+    font-size: 12px;
+    color: #C1C6C8;
+}
+/*fixed-menu end*/
+
+
+.mbsc-mobiscroll .dwwr {
+    background: #E7E7E7;
+    border-radius: 15px;
+}
+
+.mbsc-mobiscroll .dwwol {
+    border-top: 1px solid #DCDCDC;
+    border-bottom: 1px solid #DCDCDC;
+    -webkit-box-shadow: 0 0 0px 120px rgba(0, 0, 0, .03);
+    -moz-box-shadow: 0 0 0px 120px rgba(0, 0, 0, .03);
+    box-shadow: 0 0 0px 120px rgba(0, 0, 0, .03);
+}
+
+.mbsc-mobiscroll .dw-li {
+    font-size: 18px;
+}
+
+
+.file{
+    display: none;
+}
+
+
+
+/*old box*/
+.old-box {
+    width: 290px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);	/* Firefox 4 */
+    -webkit-transform: translate(-50%, -50%);	/* Safari 鍜�Chrome */
+    -o-transform: translate(-50%, -50%);	/* Opera */
+    background-color: #ffffff;
+    border-radius: 5px;
+    z-index: 100001;
+    display: none;
+}
+.box-head{
+    padding: 20px;
+    position: relative;
+    font-size: 16px;
+    color: #333333;
+    font-weight: bold;
+}
+.old-box .close_box {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background: url("../imgs/icons.png") no-repeat;
+    background-position: -354px -244px;
+    position: absolute;
+    right: 40px;
+    top: 45px;
+}
+.old-box ul {
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #FAFAFA;
+    font-size: 16px;
+    color: #838E93;
+    line-height: 30px;
+    border-top: 1px solid #F0F0F0;
+    border-bottom: 1px solid #F0F0F0;
+    border-radius: 0 0 5px 5px;
+}
+.old-box ul li a{
+    font-size: 16px;
+    color: #838E93;
+}
+#mask {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 100000;
+    display: none;
+}
+.ewm-box-img{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+
+body .layui-layer{
+	-webkit-animation-fill-mode: none;
+    animation-fill-mode: none;
+}
+
+
+@media screen and (max-width: 320px){
+
+}

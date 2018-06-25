@@ -1,0 +1,76 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+  	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+  	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://cxf.apache.org/jaxrs
+	http://cxf.apache.org/schemas/jaxrs.xsd">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml"/>
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
+	
+	
+	<bean class="org.apache.cxf.jaxrs.JAXRSServerFactoryBean" init-method="create">
+		<property name="address" value="/v1"/><!-- 定义版本是v1 -->
+		<property name="serviceBeans">
+			<list>
+				<ref bean="ws_commonInterfaceService"/>
+				<ref bean="ws_securytyService"/>
+			</list>
+		</property>
+		<property name="extensionMappings">
+			<map>
+				<entry key="json" value="application/json"></entry>
+				<entry key="xml" value="application/xml"></entry>
+			</map>
+		</property>
+		<property name="providers">
+			<list>
+				<ref bean="multipartProvider"/>
+				<ref bean="jaxbProvider"/>
+				<ref bean="authenticationFilter"/>
+			</list>
+		</property>
+		<property name="properties">
+			<map>
+				<entry key="attachment-directory" value="/temp/fileuploads"></entry>
+				<entry key="attachment-memory-threshold" value="20480000"></entry>
+				<!-- 设置附件的最大值 -->
+				<entry key="attachment-max-size" value="512000"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="jaxbProvider" class="org.apache.cxf.jaxrs.provider.json.JSONProvider">
+		<!-- 当方法返回值是一个自定义的JavaBean时，在将其序列化为JSON字符串时，不要用该JavaBean的类名作为最外面的key -->
+		<property name="dropRootElement" value="true"></property>
+		<!-- 当方法返回值是一个集合，集合中包含自定义的JavaBean时，在将其序列化为JSON字符串时，不要用该集合中JavaBean的类名作为最外面的key -->
+		<property name="dropCollectionWrapperElement" value="true"></property>
+		<!-- 
+		<property name="supportUnwrapped" value="true"></property>
+		 -->
+		 <!-- 序列化集合的时候，是否将该集合序列化为一个JSON数组 -->
+		<property name="serializeAsArray" value="true"></property>
+		<property name="marshallAsJaxbElement" value="true"></property>
+		<property name="unmarshallAsJaxbElement" value="true"></property>
+		<!-- 
+		<property name="ignoreMixedContent" value="true"></property>
+		<property name="ignoreNamespaces" value="true"></property>
+		 -->
+	</bean>	
+	
+	<bean id="multipartProvider" class="org.apache.cxf.jaxrs.provider.MultipartProvider"/>
+	<bean id="authenticationFilter" class="com.wfsc.apex.ossworks.ws.AuthenticationRequestHandler"></bean>
+	
+	
+	<!-- 公共接口 -->
+	<bean id="ws_commonInterfaceService" class="com.wfsc.apex.ossworks.ws.impl.CommonlIntfaceImpl">
+	</bean>
+	
+	<!-- 权限接口 -->
+	<bean id="ws_securytyService" class="com.wfsc.apex.ossworks.ws.impl.SecurityServiceImpl">
+		<property name="securityService" ref="securityService"></property>
+	</bean>
+	
+</beans>

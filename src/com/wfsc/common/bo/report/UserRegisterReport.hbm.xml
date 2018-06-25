@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.wfsc.common.bo.report.UserRegisterReport"
+        table="wf_report_user"
+        lazy="false"
+        dynamic-update="true"
+        dynamic-insert="true"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="id"
+            column="id"
+            type="long"
+            unsaved-value="0"
+        >
+            <generator class="native">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-UserRegisterReport.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="year"
+            type="int"
+            update="true"
+            insert="true"
+            column="year"
+        />
+
+        <property
+            name="month"
+            type="int"
+            update="true"
+            insert="true"
+            column="month"
+        />
+
+        <property
+            name="week"
+            type="int"
+            update="true"
+            insert="true"
+            column="week"
+        />
+
+        <property
+            name="regCount"
+            type="int"
+            update="true"
+            insert="true"
+            column="regCount"
+        />
+
+        <property
+            name="orgId"
+            type="long"
+            update="true"
+            insert="true"
+            column="orgId"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-UserRegisterReport.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

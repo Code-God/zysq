@@ -1,0 +1,19 @@
+﻿.Wdate{	
+	border:#7F9DB9 1px solid;
+	height:20px;
+	background:#fff url(dc7.jpg) no-repeat right;
+	
+}
+.wdateinput{
+	margin-left: 5px;
+	border:#7F9DB9 1px solid;
+	height:20px;
+	background:#fff url(dc7.jpg) no-repeat right;
+	padding:0 0 0 4px;
+	font:100 12px/20px Arial, Helvetica, sans-serif;
+}
+
+.WdateFmtErr{
+	font-weight:bold;
+	color:red;
+}

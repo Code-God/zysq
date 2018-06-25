@@ -1,0 +1,461 @@
+/* CSS Document */
+.fixed-menu ul li a p{
+	margin-top: -4px;
+}
+.user_head {
+    margin: 0px;
+    padding:1.0rem 0;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+    width:100%;
+    border-bottom: 1px solid #e1e1e1;
+}
+.user_head i {
+	margin-left:10px;
+    font-size: 2rem;
+    color: #919191;
+    float: left;
+    width:40px;
+    height:40px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.user_head .u_info {
+    margin-left: 5px;
+    float: left;
+}
+.user_head .u_info strong {
+    font-size: 0.875rem;
+    color: #7e147e;
+    font-weight: normal;
+}
+.user_head .u_info p {
+    margin-top: 5px;
+    font-size: 0.875rem;
+    color: #919191;
+    line-height: 16px;
+    position: relative;
+    text-indent: 20px;
+}
+.user_head .u_info p:before {
+    position: absolute;
+    top: 0px;
+    left: -18px;
+    content: "\e614";
+    font-size: 0.9rem;
+    color: #919191;
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.user_head .perfect_btn {
+    margin-top: 0.625rem;
+    padding-right: 1.8rem;
+    float: right;
+    font-size: 0.875rem;
+    color: #919191;
+}
+.user_head .perfect_btn:after {
+    position: absolute;
+    top: 1.45rem;
+    right: 10px;
+    content: "\e625";
+    font-size: 1.2rem;
+    color: #919191;
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.user_panel {
+    margin: 10px 0;
+    padding:1.0rem 0;
+    width:100%;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+.user_panel a {
+	margin-left:10px;
+    font-size: 0.875rem;
+    color: #666666;
+    display: block;
+    position: relative;
+}
+.user_panel a:after {
+    position: absolute;
+    top: -0.2rem;
+    right: 10px;
+    content: "\e625";
+    font-size: 1.2rem;
+    color: #919191;
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.c_state{
+	margin:0 1.8rem 0 0;
+	float: right;
+    color: #919191;
+}
+/* stepInfo 
+	border-radius闁挎冻鎷峰☉鎾跺劋椤掓粓寮悷鎷屽煂闁挎冻鎷穨N闁挎稑鐬奸弫鍗烆潰閿濆棙鐓欑憸鑸灩閹粓宕烽崱妤勫煂閺夌儐鍓欑�鏌ユ晬鐎涖劎鎼炬繝鍌樹海閻℃帒锕ゅ〒楣冨Υ閿燂拷	padding闁挎稒鑹惧ù妯裤亹閵忋垺鐣遍柛鎰嚀缁旂喓鎹勯敓锟�background闁挎稒鑹惧ù妯裤亹閵忥絽鍓归柡鍜佸灥婢癸拷
+	text-align闁挎稒纰嶉弸鍐嫉椤掞拷鍤犲浼欐嫹
+	line-height闁挎稒淇洪、鎴烆殗閿燂拷	color闁挎稒纰嶉弸鍐拷濡ゅ拋鏉归柤鐧告嫹
+	position闁挎稒鑹鹃悾鐐媴閿燂拷	width闁挎稒鑹鹃鏃�償閿燂拷	height闁挎稒宀搁悵顔芥償閿燂拷*/
+
+.stepInfo {
+    position: relative;
+    width:100%;
+    margin: 10px auto 0 auto;
+    background: #000000;
+}
+.stepInfo ul {
+	margin:0 auto;
+    width:80%;
+}
+.stepInfo li {
+    float: left;
+    width: 48%;
+    height: 0.10rem;
+    border-bottom: 1px dashed #e1e1e1;
+}
+
+.stepIco {
+    border-radius: 1rem;
+    padding: 0.04rem;
+    background: #e1e1e1;
+    text-align: center;
+    line-height: 1.0rem;
+    color: #fff;
+    position: absolute;
+    width: 1.0rem;
+    height: 1.0rem;
+}
+.stepIco span{
+   margin-top: 2px;
+   display:block;
+}
+.stepIco1 {
+    top: -0.4em;
+    left: 10%;
+    font-size: 0.65rem
+}
+.stepIco2 {
+    top: -0.4em;
+    left: 35%;
+    font-size: 0.65rem
+}
+.stepIco3 {
+    top: -0.4em;
+    left: 60%;
+    font-size: 0.65rem
+}
+.stepIco4 {
+    top: -0.4em;
+    right: 10%;
+    font-size: 0.85rem
+}
+.stepText {
+    color: #666;
+    margin-top: 0.2em;
+    width: 4rem;
+    text-align: center;
+    margin-left: -1.8em;
+    font-size: 0.75rem
+}
+.create_node {
+    background: #7e147e;
+}
+.create_node .stepText {
+    color: #7e147e;
+}
+
+/**************************/
+
+.state {}
+.state_haed {
+    margin: 0;
+    padding:0.3rem 0;
+    text-align: left;
+    display: block;
+    font-size: 0.875rem;
+    text-indent: 10px;
+    position: relative;
+}
+.state_haed a {
+    position:absolute;
+    top:3px;
+    right: 10px;
+    padding:3px 4px;
+    background: #7e147e;
+    border-radius: 3px;
+    text-align:left;
+    font-size: 0.625rem;
+    color: #ffffff;
+    text-indent: 0;
+}
+.state_body {
+    margin: 0px;
+    padding:0.5rem 0 2.4rem 0;
+    width:100%;
+    text-align: left;
+    background: #ffffff;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+.state_body h1 {
+	margin-left:15px;
+    font-size: 0.875rem;
+    color: #919191;
+    font-weight: normal;
+}
+.state_body a {
+    padding: 10px;
+    font-size: 0.875rem;
+    color: #666666;
+    display: block;
+    position: relative;
+    border-bottom: 1px dashed #e1e1e1;
+}
+.state_body a strong {
+    padding: 3px 10px;
+    font-size: 0.875rem;
+    color: #ffffff;
+    font-weight: normal;
+    background: #db99df;
+    border-radius: 3px;
+}
+.state_body p {
+    margin-top: 8px;
+    font-size: 0.875rem;
+    color: #919191;
+    line-height: 16px;
+    position: relative;
+}
+
+/*************************/
+.state_body_list {
+    margin-top: 0.625rem;
+    padding:0.5rem 0 2.4rem 0;
+    width:100%;
+    text-align: left;
+    background: #ffffff;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+.state_body_list h1 {
+	margin-left:15px;
+    font-size: 0.875rem;
+    color: #919191;
+    font-weight: normal;
+}
+/**************************/
+.patient_form {
+    margin: 10px 0px;
+    padding: 10px 10px;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+.patient_form .prompt {
+    font-size: 0.725rem;
+    color: #999999;
+    text-align: right;
+}
+.patient_form ul {
+    padding: 0 10px;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+}
+.patient_form ul li {
+    position: relative;
+    padding: 10px 0;
+    border-bottom: 1px dashed #e1e1e1;
+    display: table;
+    clear: both;
+    width: 100%;
+}
+.patient_form ul li.required:after {
+    position: absolute;
+    top: 20px;
+    right: 5px;
+    content: "*";
+    color: #db99df;
+    font-size: 0.75rem;
+}
+.patient_form ul li strong {
+    font-size: 0.875rem;
+    color: #999999;
+    font-weight: normal;
+    width: 25%;
+}
+.patient_form ul li .in_text {
+    width: 70%;
+    height: 20px;
+    line-height: 20px;
+    border: none;
+    font-size:0.75rem;
+    background: none;
+}
+.patient_form ul li textarea {
+	padding:5px;
+    width: 200px;
+    min-height: 50px;
+    line-height: 20px;
+    border: none;
+    font-size:0.75rem;
+    background: none;
+}
+.patient_form ul li:last-child {
+    border-bottom: none;
+}
+.patient_form ul li strong {
+    float: left;
+}
+.patient_form ul li button {
+    margin: 10px auto 0 auto;
+    padding: 7px 15px;
+    background: #f3d5f5;
+    color: #7e147e;
+    display: table;
+    border-radius: 3px;
+    font-size:0.875rem;
+    border: none;
+}
+.user_img {
+    position: relative;
+    float: right;
+    margin-right: 15px;
+    width:30px;
+    height:30px;
+    border-radius:20px;
+    overflow: hidden;
+}
+.user_img i{
+    font-size: 1rem;
+    color: #999999;
+}
+.user_img .file_text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    z-index: 99999;
+}/**************************/
+.certificate_form {
+    margin: 10px 0px;
+    padding: 10px 10px;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+.certificate_form .prompt {
+    font-size: 0.725rem;
+    color: #999999;
+    text-align: right;
+}
+.certificate_form figure {
+    padding:10px 0;
+    text-align: center;
+    background: #ffffff;
+    display: block;
+    border: 1px solid #e1e1e1;
+}
+.certificate_form ul {
+    padding: 0 10px;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+}
+.certificate_form ul li {
+    position: relative;
+    padding: 10px 0;
+    border-bottom: 1px dashed #e1e1e1;
+    display: table;
+    clear: both;
+    width: 100%;
+}
+.certificate_form ul li.required:after {
+    position: absolute;
+    top: 20px;
+    right: 5px;
+    content: "*";
+    color: #db99df;
+    font-size: 0.75rem;
+}
+.certificate_form ul li strong {
+    font-size: 0.875rem;
+    color: #999999;
+    font-weight: normal;
+}
+.certificate_form ul li .in_text {
+    width: 200px;
+    height: 20px;
+    line-height: 20px;
+    border: none;
+    background: none;
+}
+.certificate_form ul li textarea {
+    width: 200px;
+    min-height: 50px;
+    line-height: 20px;
+    border: none;
+    background: none;
+}
+.certificate_form ul li:last-child {
+}
+.certificate_form ul li strong {
+    float: left;
+}
+.certificate_form button {
+    margin: 10px auto 0 auto;
+    padding: 7px 15px;
+    background: #f3d5f5;
+    color: #7e147e;
+    display: table;
+    font-size:0.875rem;
+    border-radius: 3px;
+    border: none;
+}
+/********************/
+
+.qr_code {
+    margin: 10px 0px;
+    padding: 10px 10px;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+.qr_code figure {
+    padding:10px 0;
+    text-align: center;
+    background: #ffffff;
+    display: block;
+}
+.qr_code ul li h1{
+    font-size: 1.2rem;
+    text-align:center;
+    color: #666666;
+}
+.qr_code ul li {
+    margin: 10px;
+    font-size: 1rem;
+    text-align:center;
+    color: #7e147e;
+}

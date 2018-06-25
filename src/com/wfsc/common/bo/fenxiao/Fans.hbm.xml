@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.wfsc.common.bo.fenxiao.Fans"
+        table="wf_fans"
+        lazy="false"
+        dynamic-update="true"
+        dynamic-insert="true"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="id"
+            column="id"
+            type="long"
+            unsaved-value="0"
+        >
+            <generator class="native">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-Fans.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="openId"
+            type="string"
+            update="true"
+            insert="true"
+            column="openId"
+        />
+
+        <property
+            name="nickName"
+            type="string"
+            update="true"
+            insert="true"
+            column="nickName"
+        />
+
+        <property
+            name="headimgurl"
+            type="string"
+            update="true"
+            insert="true"
+            column="headimgurl"
+        />
+
+        <property
+            name="sex"
+            type="int"
+            update="true"
+            insert="true"
+            column="sex"
+        />
+
+        <property
+            name="city"
+            type="string"
+            update="true"
+            insert="true"
+            column="city"
+        />
+
+        <property
+            name="province"
+            type="string"
+            update="true"
+            insert="true"
+            column="province"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Fans.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

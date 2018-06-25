@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="admin" namespace="/admin" extends="struts-default">
+		<interceptors>
+			<interceptor name="adminAuth" class="com.wfsc.interceptors.AdminSessionInterceptor">
+				<param name="excludeMethods">login</param>
+			</interceptor>
+			
+			<interceptor-stack name="adminStack">
+				<interceptor-ref name="adminAuth" />
+				<interceptor-ref name="defaultStack" />
+				<!-- 异常堆栈日志记录，便于开发时使用，后期需要对异常统一处理 -->
+				<interceptor-ref name="exception">
+                  <param name="logEnabled">true</param>
+                  <param name="logLevel">info</param>             
+              	</interceptor-ref>
+				<interceptor-ref name="fileUpload">
+					<param name="allowedTypes">image/bmp,image/jpg,image/png,image/gif,image/jpeg,image/JPG,image/JPEG,image/pjpeg</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="adminStack" />
+		<global-results>
+			<result name="info">/WEB-INF/jsps/admin/info.jsp</result>
+			<result name="login">/mm/login.jsp</result>
+			<result name="runtimeException">/WEB-INF/jsps/admin/error.jsp</result>
+			<result name="adminException">/WEB-INF/jsps/admin/error500.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="runtimeException" exception="com.base.exception.CupidRuntimeException">
+			</exception-mapping>
+			<exception-mapping result="adminException" exception="java.lang.Exception">
+			</exception-mapping>
+		</global-exception-mappings>
+		
+		<!-- 后台管理功能的通用action -->
+		<action name="admin_*" class="AdminAction" method="{1}">
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<!-- 后台首页 -->
+			<result name="success">/WEB-INF/jsps/admin/adminIndex.jsp</result>
+			<result name="login">/mm/login.jsp</result>
+			<result name="adminManager">/WEB-INF/jsps/admin/adminManager.jsp</result>
+			<result name="adminList">/WEB-INF/jsps/admin/adminList.jsp</result>
+			<result name="input">/WEB-INF/jsps/admin/adminInput.jsp</result>
+			<result name="modifyPwd">/WEB-INF/jsps/admin/modifyPwd.jsp</result>
+			<result name="ok" type="redirectAction">admin_manager.Q</result>
+
+			<result name="keywords">/WEB-INF/jsps/admin/wx/keywords.jsp</result>
+			<result name="welcome">/WEB-INF/jsps/admin/wx/welcome.jsp</result>
+			<result name="menu">/WEB-INF/jsps/admin/wx/menu.jsp</result>
+			<result name="xmenu">/WEB-INF/jsps/admin/wx/xmenu.jsp</result>
+			<result name="imageKeywords">/WEB-INF/jsps/admin/wx/imageKeywords.jsp</result>
+			
+			<result name="addGift">/WEB-INF/jsps/admin/fenxiao/addGift.jsp</result>
+			<result name="giftList">/WEB-INF/jsps/admin/fenxiao/giftList.jsp</result>
+			
+			<result name="generatePj">/WEB-INF/jsps/admin/tool/pjconfig.jsp</result>
+			
+			<result name="colIndex">/WEB-INF/jsps/admin/publish/columnList.jsp</result>
+			<result name="publishList">/WEB-INF/jsps/admin/publish/publishList.jsp</result>
+			<result name="addCase">/WEB-INF/jsps/admin/publish/addCase.jsp</result>
+			<result name="addOk" type="redirectAction">admin_publishList.Q</result>
+			<result name="contact">/WEB-INF/jsps/admin/publish/contactAdmin.jsp</result>
+			<!-- 评价管理 -->
+			<result name="pjList">/WEB-INF/jsps/admin/product/pjList.jsp</result>
+		</action>
+		
+		<action name="chart_*" class="ChartAction" method="{1}">
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<result name="ok">/WEB-INF/jsps/admin/chart/{1}.jsp</result>
+		</action>
+		
+		<action name="sec_*" class="SecurityAction" method="{1}">
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<result name="ok" type="redirectAction">sec_roleManager</result>
+			<result name="roleManager">/WEB-INF/jsps/admin/security/roleManager.jsp</result>
+			<result name="addRole">/WEB-INF/jsps/admin/security/addRole.jsp</result>
+			<result name="backUp">/WEB-INF/jsps/admin/backUp.jsp</result>
+			<result name="sysconfig">/WEB-INF/jsps/admin/sysConfig.jsp</result>
+		</action>
+		
+			<!--商品管理-->
+		<action name="products_*" class="ProductsAction" method="{1}">
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<result name="manager">/WEB-INF/jsps/admin/product/productManager.jsp</result>
+			<result name="list">/WEB-INF/jsps/admin/product/productList.jsp</result>
+			<result name="productInput">/WEB-INF/jsps/admin/product/productInput.jsp</result>
+			<result name="detail">/WEB-INF/jsps/admin/product/productDetail.jsp</result>
+			<result name="add">/WEB-INF/jsps/admin/product/productAdd.jsp</result>
+			<result name="ok" type="redirectAction">products_manager.Q</result>
+			<result name="prdCatTree">/WEB-INF/jsps/admin/product/prdCatTree.jsp</result>
+			<result name="orgTree">/WEB-INF/jsps/admin/auth/selectOrg.jsp</result>
+			<result name="stock">/WEB-INF/jsps/admin/product/productStock.jsp</result>
+			<result name="stockList">/WEB-INF/jsps/admin/product/stockList.jsp</result>
+			
+			<result name="managerall">/WEB-INF/jsps/admin/product/adminProductMgt.jsp</result>
+			<!-- 爆款 -->
+			<result name="onePrd">/WEB-INF/jsps/admin/fenxiao/onePrd.jsp</result>
+		</action>
+		
+		<!--产品分类管理<interceptor-ref name="adminStack"></interceptor-ref>-->
+		<action name="productcat_*" class="ProductCatAction" method="{1}">
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<!-- 
+			<result name="index">/WEB-INF/jsps/admin/productcat/index.jsp</result>
+			 -->
+			<result name="index">/WEB-INF/jsps/admin/productcat/prdCatMgt.jsp</result>
+			<result name="list">/WEB-INF/jsps/admin/productcat/list.jsp</result>
+			<result name="preadd">/WEB-INF/jsps/admin/productcat/add.jsp</result>
+			<result name="edit">/WEB-INF/jsps/admin/productcat/edit.jsp</result>
+			<result name="ok" type="redirectAction">productcat_index.Q</result>
+		</action>
+		
+		<!--用户管理-->
+		<action name="user_*" class="UserAction" method="{1}">
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<result name="manager">/WEB-INF/jsps/admin/user/userManager.jsp</result>
+			<result name="list">/WEB-INF/jsps/admin/user/userList.jsp</result>
+			<result name="detail">/WEB-INF/jsps/admin/user/userDetail.jsp</result>
+			<result name="add">/WEB-INF/jsps/admin/user/userAdd.jsp</result>
+			<result name="ok" type="redirectAction">user_manager.Q</result>
+			<result name="audit">/WEB-INF/jsps/admin/user/userAudit.jsp</result>
+			<!-- 积分操作 -->
+			<result name="pointsDetail">/WEB-INF/jsps/admin/user/userPointsDetail.jsp</result>
+			<result name="pointsObtainManager">/WEB-INF/jsps/admin/user/pointsObtainManager.jsp</result>
+			<result name="pointsObtainList">/WEB-INF/jsps/admin/user/pointsObtainList.jsp</result>
+			<result name="pointsExchangeManager">/WEB-INF/jsps/admin/user/pointsExchangeManager.jsp</result>
+			<result name="pointsExchangeList">/WEB-INF/jsps/admin/user/pointsExchangeList.jsp</result>
+		</action>
+
+		<!-- 城市管理 -->
+		<action name="city_*" class="CityAction" method="{1}">
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<result name="select">/WEB-INF/jsps/admin/city/selectCityTree.jsp</result>
+		</action>
+		
+		
+		<!-- 报表 -->
+		<action name="report_*" class="ReportAction" method="{1}">
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<result name="userReport">/WEB-INF/jsps/admin/report/userReport.jsp</result>
+			<result name="saleVolume">/WEB-INF/jsps/admin/report/productSaleVolume.jsp</result>
+			<result name="financeReport">/WEB-INF/jsps/admin/report/financeReport.jsp</result>
+			<result name="satisfactionReport">/WEB-INF/jsps/admin/report/satisfactionReport.jsp</result>
+			
+		</action>
+		
+		<!-- 系统日志 -->
+		<action name="syslog_*" class="SystemLogAction" method="{1}">
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<result name="index">/WEB-INF/jsps/admin/system/syslogIndex.jsp</result>
+			<result name="list">/WEB-INF/jsps/admin/system/syslogList.jsp</result>
+		</action>
+		
+		<!-- 系统设置 -->
+		<action name="system_*" class="SystemAction" method="{1}">
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<result name="seoConfig">/WEB-INF/jsps/admin/system/seoConfig.jsp</result>
+			<result name="sysconfig">/WEB-INF/jsps/admin/system/sysConfig.jsp</result>
+			<result name="seo" type="redirectAction">system_preSeo.Q</result>
+			<result name="mailConfig">/WEB-INF/jsps/admin/system/mailConfig.jsp</result>
+			<result name="mail" type="redirectAction">system_preMail.Q</result>
+		</action>
+		
+		<action name="fx_*" class="FxAction" method="{1}">
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<result name="index">/WEB-INF/jsps/admin/auth/orgMgt.jsp</result>
+		</action>
+		
+		<!-- hotel管理 -->
+		<action name="hotel_*" class="HotelAction" method="{1}">
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<result name="ok">/WEB-INF/jsps/admin/hotel/{1}.jsp</result>
+		</action>
+		
+		<!--图片设置-->
+		<action name="banner_*" class="DrugBannerAction" method="{1}">	
+			
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<result name="list">/WEB-INF/jsps/admin/banner/bannerList.jsp</result>
+			<result name="add">/WEB-INF/jsps/admin/banner/addBanner.jsp</result> 
+			<result name="save" type="redirectAction">banner_getList.Q</result>
+			<result name="getone">/WEB-INF/jsps/admin/banner/updateBanner.jsp</result>
+			<result name="update" type="redirectAction">banner_getList.Q</result>
+			<result name="del" type="redirectAction">banner_getList.Q</result>
+		</action>	
+		
+		<!--项目类型-->
+		<action name="itemClass_*" class="DrugItemClassificationAction" method="{1}">	
+			
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<result name="itemClassManager">/WEB-INF/jsps/admin/drugItemClassification/drugItemClassificationManager.jsp</result>
+			<result name="itemClassList">/WEB-INF/jsps/admin/drugItemClassification/drugItemClassificationList.jsp</result> 
+			<result name="itemClassInput">/WEB-INF/jsps/admin/drugItemClassification/drugItemClassificationInput.jsp</result>
+			<result name="ok" type="redirectAction">itemClass_itemClassManager.Q</result>
+		</action>		
+		<!--疾病管理-->
+		<action name="drugDisease_*" class="DrugDiseaseItemAction" method="{1}">	
+			
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<result name="diseaseManager">/WEB-INF/jsps/admin/drugDiseaseItem/drugDiseaseItemManager.jsp</result>
+			<result name="drugDiseaseList">/WEB-INF/jsps/admin/drugDiseaseItem/drugDiseaseItemList.jsp</result> 
+			<result name="drugDiseaseInput">/WEB-INF/jsps/admin/drugDiseaseItem/drugDiseaseItemInput.jsp</result>
+			<result name="ok" type="redirectAction">drugDisease_diseaseManager.Q</result>
+			
+			<result name="diseaseCenterCountManager">/WEB-INF/jsps/admin/drugDiseaseItem/drugDiseaseCenterCountManager.jsp</result>
+			<result name="drugDiseaseCenterCountList">/WEB-INF/jsps/admin/drugDiseaseItem/drugDiseaseCenterCountList.jsp</result> 
+		</action>
+		<!-- 药物管理-->
+		<action name="drugs_*" class="DrugDrugsAction" method="{1}">				
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<result name="drugsManager">/WEB-INF/jsps/admin/drugs/drugsManager.jsp</result>
+			<result name="drugsList">/WEB-INF/jsps/admin/drugs/drugsList.jsp</result> 
+			<result name="drugsInput">/WEB-INF/jsps/admin/drugs/drugsInput.jsp</result>
+			<result name="ok" type="redirectAction">drugs_drugsManager.Q</result>
+		</action>
+		
+		<!-- 医疗专业认证 -->
+		<action name="qualification_*" class="DrugQualificationAction" method="{1}">
+			<result name="qualificationManager">/WEB-INF/jsps/admin/drugQualification/drugQualificationManager.jsp</result>
+			<result name="qualificationList">/WEB-INF/jsps/admin/drugQualification/drugQualificationList.jsp</result>				
+			<result name="qualificationdetail">/WEB-INF/jsps/admin/drugQualification/drugQualificationDetail.jsp</result>	
+			<result name="newsExamineIndex">/WEB-INF/jsps/admin/drugQualification/newsExamineIndex.jsp</result>
+			<result name="newsExamine">/WEB-INF/jsps/admin/drugQualification/newsExamine.jsp</result>
+			<result name="newsExamineList">/WEB-INF/jsps/admin/drugQualification/newsExamineList.jsp</result>
+			<result name="okNews" type="redirectAction">qualification_imageWordsManager.Q</result>
+			<result name="ok" type="redirectAction">qualification_qualManager.Q</result>	
+		</action>
+		<!-- 捷信项目管理 -->
+			<action name="drugDiseaseDict_*" class="DrugDiseaseDictAction" method="{1}">	
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<result name="diseaseDictManager">/WEB-INF/jsps/admin/drugDiseaseDict/drugDiseaseDictManager.jsp</result>
+			<result name="drugDiseaseDictList">/WEB-INF/jsps/admin/drugDiseaseDict/drugDiseaseDictList.jsp</result> 
+			<result name="drugDiseaseDict">/WEB-INF/jsps/admin/drugDiseaseDict/drugDiseaseDictInput.jsp</result>
+			<result name="ok" type="redirectAction">drugDiseaseDict_diseaseDictManager.Q</result>
+		</action>
+		
+		<!-- 报名人员管理 -->
+			<action name="drugUDRelation_*" class="DrugUserAction" method="{1}">	
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<result name="relationManager">/WEB-INF/jsps/admin/drugUDRelation/drugUDRelationManager.jsp</result>
+			<result name="relationList">/WEB-INF/jsps/admin/drugUDRelation/drugUDRelationList.jsp</result> 
+			
+			<!-- 邀请人管理 -->
+			<result name="inviterManager">/WEB-INF/jsps/admin/drugInviter/drugInviterManager.jsp</result>
+			<result name="inviterList">/WEB-INF/jsps/admin/drugInviter/drugInviterList.jsp</result>
+			<result name="beInvitedManager">/WEB-INF/jsps/admin/drugInviter/drugBeInvitedUserManager.jsp</result>
+			<result name="beInvitedList">/WEB-INF/jsps/admin/drugInviter/drugBeInvitedUserList.jsp</result>
+			<!-- 患者推荐人管理 -->
+			<result name="recommendedManager">/WEB-INF/jsps/admin/drugRecommended/drugRecommendedManager.jsp</result>
+			<result name="recommendedList">/WEB-INF/jsps/admin/drugRecommended/drugRecommendedList.jsp</result>
+			<result name="usersManager">/WEB-INF/jsps/admin/drugRecommended/drugUsersManager.jsp</result>
+			<result name="usersList">/WEB-INF/jsps/admin/drugRecommended/drugUsersList.jsp</result>
+		</action>
+		<!-- 项目中心 -->
+		<action name="durgProjectConter_*" class="DrugProjectConterAction" method="{1}">	
+			<interceptor-ref name="adminStack"></interceptor-ref>
+			<result name="projectConterManager">/WEB-INF/jsps/admin/drugProjectConter/drugProjectConterManager.jsp</result>
+			<result name="projectConterList">/WEB-INF/jsps/admin/drugProjectConter/drugProjectConterList.jsp</result> 
+			<result name="projectConterInput">/WEB-INF/jsps/admin/drugProjectConter/drugProjectConterInput.jsp</result>
+			<result name="ok" type="redirectAction">durgProjectConter_manager.Q</result>
+		</action>
+	</package>
+	
+</struts>

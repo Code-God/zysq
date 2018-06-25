@@ -1,0 +1,91 @@
+@charset "utf-8";
+.mod_tel{float:right;margin-top:10px;font:normal 14px/60px "Microsoft Yahei";}
+.mod_tel span{font:normal 14px/60px "Microsoft Yahei";color:#333333;}
+.mod_tel span.mod_telephone{color:#ff4c03;font:italic 36px/60px "Microsoft Yahei";}
+.grid_c1, .grid_c2a, .grid_c2b, .grid_c3a {margin: 0 auto;width: 1000px;}
+.wf_main li{width: 150px;}
+.mod_help_item{width: 120px;}
+.mod_help_item1{width: 120px;padding-left: 15px;}
+.mod_help_item2 {width: 140px;float: left;height: 160px;}
+/*用户注册*/
+.Register, .login{border-top:2px solid #57c366;width:100%;padding: 30px 0;}
+.Register_con, .login_con{}
+.login_con{ border:1px solid #cccccc;}
+.tab{margin-bottom:20px;position:relative;overflow:hidden;background:#fff;width:1000px;margin:0 auto;font-family:'Roboto', sans-serif;line-height:1.5;font-weight:300;color:#888;-webkit-font-smoothing:antialiased;}
+.tabs{display:table;position:relative;overflow:hidden;margin:0;width:100%;}
+.tab_content{border:1px solid #cccccc;margin-top:-1px;}
+.tabs li{float:left;line-height:38px;overflow:hidden;padding:0;position:relative;}
+.tabs a{background-color:#eff0f2;color:#888;font-weight:500;display:block;letter-spacing:0;outline:none;padding:0 100px;text-decoration:none;-webkit-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;font:normal 18px/38px "Microsoft Yahei";}
+.tabs_item{display:none;padding:0px;}
+.tabs_item h4{font-weight:bold;color:#87d3b7;font-size:20px;}
+.tabs_item:first-child{display:block;}
+.current a{color:#fff;background:#faa701;}
+.login_r{ position:absolute;right: 0;top: 0px;font:normal 14px/35px "Microsoft Yahei";}
+.login_r a{color:#57c366;}
+/*个人用户注册*/
+.main_l{width:480px;height:385px;padding-top:20px;float:left;background:#ffffff;}
+.main_r{width:385px;height:380px;float:right;margin-right:20px;}
+.main_r img{width:385px;height:380px;}
+.ubd {margin:20px auto 0;}
+.ubd, .deng {width:400px;height:37px; position:relative;}
+.reg_warning,.reg_warning1{font: normal 14px/38px "Microsoft Yahei";color: #FFA300;position:absolute;top:-4px;left:338px;text-indent:20px;background: url(../images/01.png) no-repeat scroll -258px -450px transparent;width:300px;}
+.reg_warning1{left:380px;}
+.im_col{color:#FFA300;}
+.ubd_text{width:120px;height:35px;display: inline-block;float: left;text-align:right;font:normal 16px/35px "Microsoft Yahei";margin-right:5px;}
+.ubd_input{width:200px;height: 35px;display: inline-block;float: left; border:1px solid #cccccc;}
+.register {width:400px;margin: 15px auto 0;position: relative;}
+.register input {border: 1px solid #cccccc;height:35px;float: left;width: 115px;line-height:30px;margin-right:10px;
+color: #333333;text-align:left;}
+.frm {width: 265px;margin: 10px auto;color:#333333;position: relative;font:normal 12px/20px "Microsoft Yahei";padding-left: 110px;}
+.frm input {width: 18px;height: 18px;}
+.frm span {position: absolute;top:0px;}
+.frm span a{color:#4ec05e;}
+.deng {margin:15px auto 0;text-align:center;position:relative;}
+.deng input{color: #e60c0b;border: none;font-size: 16px;font-weight: 700;padding-top:0px;width:150px;height:35px; background:#faa701;font:normal 14px/35px "Microsoft Yahei";color:#ffffff;}
+/*企业用户注册*/
+.qymain_l{width:600px;height:auto;margin:20px;float:left;background:#ffffff; border-right:1px dotted #dddddd;}
+.qymain_r{width:342px;height:auto;float:right;background:#ffffff; text-align:center;}
+.qy_tit1{ text-align:center;font:normal 18px/50px "Microsoft Yahei";color:#ff4c03;padding:30px 0;}
+.qymain_r p{font:normal 12px/35px "Microsoft Yahei";color:#333333;text-align:left;padding-left:60px;}
+.qymain_r h3{font:normal 14px/35px "Microsoft Yahei";color:#333333;}
+.accountTitle {width: 556px;height: 34px;line-height: 34px;padding-left: 8px;font-size: 14px;font-weight: bold;border-bottom: 1px dashed #d5d5d5;}
+.enterpriseUsers li {position: relative;}
+.enterpriseUsers li {height: 38px;}
+.enterpriseUsers li label {width: 100px;font-size: 14px;color: #515151;height: 38px;line-height: 38px;text-align: right;}
+.enterpriseUsers li label font {color: #ff4800;}
+.reg_main li label, .reg_main li .regM, .reg_main li .reg_error, .reg_main li .reg_error1, .reg_main li .reg_error3, .reg_main li .reg_error4 {display: block;float: left;}
+.enterpriseUsers li .regM {width: 268px;height: 36px;line-height: 36px;}
+.enterpriseUsers .defaultBorder, .loginreg_main .defaultBorder, .reg_findPassword .defaultBorder {border: 1px solid #cdcdcd;}
+.enterpriseUsers li .regInput {width:228px;height:22px;line-height:22px;border:0 none;outline:none;color: #515151;padding:7px 5px;}
+.enterpriseUsers .accountTitle {width: 556px;height: 34px;line-height: 34px;padding-left: 8px;font-size: 14px;font-weight: bold;border-bottom: 1px dashed #d5d5d5;font:normal 14px/35px "Microsoft Yahei";}
+.reg_main li .codeTitle a, .reg_main li .checkTitle font, .loginreg_main li .checkTitle font, .reg_main li .reg_error a {
+color: #4ec05e;}
+.reg_main .registerNow {display:block;float:left;width:270px;height:38px;background:#faa701;font-size:16px;text-align: center;
+color: #ffffff;font:normal 14px/38px "Microsoft Yahei";}
+
+.login_left{width:580px;height:380px;float:left;}
+.login_left img{width:580px;height:380px;float:left;}
+.login_right{float:right;width:400px;padding-top:30px; position:relative;}
+.login_warming{font:normal 14px/38px "Microsoft Yahei";color:#FFA300; position:absolute;top:10px;left:125px; text-indent:2em; background:url(../images/01.png) no-repeat scroll -258px -450px transparent;}
+.login_box{}
+.login_box li label {width: 100px;font-size: 14px;color: #515151;height: 38px;line-height: 38px;text-align: right;}
+.login_box li .regM {width: 268px;height: 36px;line-height: 36px;}
+.login_box li .regInput {width:228px;height:22px;line-height:22px;border:0 none;outline:none;color:#515151;padding:7px 5px;}
+.deng .forget_passWord{color:#faa701;position: absolute;right:20px;top: 10px;text-decoration:underline;}
+/*确认邮件*/
+.log-wrap{min-height: 300px;height: 300px;border-top: 2px solid #e4e9ee;position: relative;padding-top: 60px;}
+.fg-msg {width: 60%;margin: 0 auto;}
+.fg-msg .fg-mail {display: block;width: 95px;height: 95px;background-size: contain;float: left;margin-right: 20px;}
+.fg-msg .clo{background: url("../images/fg-mail.png") no-repeat center center;}
+.fg-msg .true{background: url("../images/fg-mail-t.png") no-repeat center center;}
+.fg-msg .warm{background: url("../images/fg-mail-w.png") no-repeat center center;}
+.fg-msg .fg-cont {font-size: 14px;padding: 5px 0;color: #b8c4ce;margin-left: 115px;}
+.fg-msg .fg-cont .fg-cont-t {font-size: 20px;color: #5d6d7e;}
+.mrm {margin-right: 10px !important;}
+.fg-msg .fg-cont .fg-cont-t {font-size: 20px;color: #5d6d7e;margin-bottom: 10px;}
+.lang-btn {display: inline-block;position: relative;vertical-align: middle;cursor: pointer;white-space: nowrap;background:#4ec05e;height: 40px;line-height: 40px;font-size: 16px;color: #FFF;border: none;letter-spacing: 1px;overflow: hidden;text-align: center;border-radius: 2px;margin-right: 10px;}
+.lang-btn-huge {height: 50px;line-height: 50px;}
+.lang-btn-fixed-big {width: 160px;}
+.lang-btn-fixed-big .lang-btn-content {padding: 0;}
+.lang-cancel {background: none;color: #2d3e50;}
+.fg-msg .fg-success{display: block;width: 95px;height: 95px;background-size: contain;float: left;margin-right: 20px;background: url("../images/success.png") no-repeat center center;}

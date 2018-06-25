@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- Add packages here -->
+	<package name="drug" namespace="/drug" extends="struts-default">
+		<interceptors>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="fileUpload">
+					<param name="allowedTypes">image/bmp,image/jpg,image/png,image/gif,image/jpeg,image/JPG,image/JPEG,image/pjpeg</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack" />
+
+		<global-results>
+			<result name="info">/info.jsp</result>
+			<result name="error">/defaultError.jsp</result>
+			<result name="statusError">/statusError.jsp</result>
+		</global-results>
+		
+		<action name="wx_*" class="WeixinAction" method="{1}">
+			<result name="success">/wx/{1}.jsp</result>
+			<result name="detail">/wx/detail.jsp</result>
+			<result name="testResult9x">/wx/wxTest9xResult.jsp</result>
+			<result name="zhaohuList">/WEB-INF/jsps/admin/wx/zhaohuList.jsp</result>
+			<!-- 红包领用页面 -->
+			<result name="hongBaoIndex">/weixin/hongbao/hongbaoIndex.jsp</result>
+		</action>
+		
+		<action name="user_*" class="DrugUserAction" method="{1}">
+			<result name="medicineInfo">/weixin/drug/medicine_information.jsp</result>
+			<result name="patientInfo">/weixin/drug/patient_information.jsp</result>
+			<result name="perfectUserInfo">/weixin/drug/user_information.jsp</result>
+			<result name="qrCode">/weixin/drug/qr_code.jsp</result>	
+			<result name="userCenter">/weixin/drug/user.jsp</result>
+			<result name="moreRecommend">/weixin/drug/patient_state.jsp</result>	
+		</action>
+			<!-- 医疗专业认证 -->
+		<action name="qualification_*" class="DrugQualificationAction" method="{1}">
+			<result name="certificate">/weixin/drug/certificate.jsp</result>		
+		</action>
+		<!-- 首页 -->
+		<action name="index_*" class="drugIndexAction" method="{1}">
+		<result name="index">/weixin/drug/drug-index.jsp</result>
+		<result name="detailed">/weixin/drug/drug-disease-details.jsp</result>
+		<result name="more">/weixin/drug/drug-disease-list.jsp</result>
+		<result name="indexsearch">/weixin/drug/drup-search-list.jsp</result>
+		<result name="jsureDetailed">/weixin/drug/drug-search-details.jsp</result>
+		</action>
+
+	</package>
+</struts>

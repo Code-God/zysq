@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="com.wfsc.common.bo.comment.Comments"
+        table="wf_comments"
+        lazy="false"
+        dynamic-update="true"
+        dynamic-insert="true"
+    >
+        <cache usage="read-write" />
+
+        <id
+            name="id"
+            column="id"
+            type="long"
+            unsaved-value="0"
+        >
+            <generator class="native">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-Comments.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="creatorId"
+            type="long"
+            update="true"
+            insert="true"
+            column="creatorId"
+        />
+
+        <property
+            name="prdCode"
+            type="string"
+            update="true"
+            insert="true"
+            column="prdCode"
+        />
+
+        <property
+            name="content"
+            type="string"
+            update="true"
+            insert="true"
+            column="content"
+        />
+
+        <property
+            name="stars"
+            type="int"
+            update="true"
+            insert="true"
+            column="stars"
+        />
+
+        <property
+            name="pdate"
+            type="timestamp"
+            update="true"
+            insert="true"
+            column="pdate"
+        />
+
+        <property
+            name="nickName"
+            type="string"
+            update="true"
+            insert="true"
+            column="nickName"
+        />
+
+        <property
+            name="prdName"
+            type="string"
+            update="true"
+            insert="true"
+            column="prdName"
+        />
+
+        <property
+            name="resContent"
+            type="string"
+            update="true"
+            insert="true"
+            column="resContent"
+        />
+
+        <property
+            name="orderDetailId"
+            type="long"
+            update="true"
+            insert="true"
+            column="orderDetailId"
+        />
+
+        <property
+            name="prdTopCode"
+            type="string"
+            update="true"
+            insert="true"
+            column="prdTopCode"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Comments.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,706 @@
+/* CSS Document */
+.fixed-menu ul li a p{
+	margin-top: -4px;
+}
+.explain {
+    padding:8px 0;
+    text-align: left;
+    background: #eed9ef;
+    color: #7e147e;
+    display: table;
+    width:100%;
+    border-bottom:1px solid #ebc3ed;
+}
+.explain span {
+	width:30%;
+    height: 60px;
+    float: left;
+    background: url("../images/icon_1.png") no-repeat center;
+    background-size: 50%;
+}
+.explain p {
+	width:65%;
+    font-size: 0.75rem;
+    float: left;
+}
+.panel {
+    margin: 10px 0 0 0;
+}
+.panel h1 {
+    padding: 0 10px 5px 10px;
+    text-align: center;
+    font-size: 1.0rem;
+    font-weight: normal;
+}
+.panel .panel_body {
+    position: relative;
+    padding: 0 10px;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+.panel .panel_body .panel_list {
+    position: relative;
+    margin: 0 5px;
+    padding: 5px 0;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+    border-bottom: 1px dashed #e1e1e1;
+}
+.panel .panel_body a:last-child {
+    border-bottom: none;
+}
+.panel .panel_body .panel_list:after {
+    position: absolute;
+    top: 30%;
+    right: 0;
+    content: "\e625";
+    font-size: 1.6rem;
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    color: #e1e1e1;
+}
+.panel .panel_body .panel_list strong {
+    font-size: 0.875rem;
+    color: #7e147e;
+}
+.panel .panel_body .panel_list p {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: #919191;
+    width: 94%;
+    line-height: 1rem;
+}
+.panel .most {
+    display: none;
+}
+.open {
+    position: relative;
+    top: -2px;
+    padding: 0 8px;
+    background: #7e147e;
+    border-radius: 0 0 30px 30px;
+    color: #ffffff;
+    cursor: pointer;
+    width:50px;
+}
+.retract {
+    position: relative;
+    top: -2px;
+    padding: 0 8px;
+    background: #7e147e;
+    border-radius: 0 0 30px 30px;
+    color: #ffffff;
+    cursor: pointer;
+    display: none;
+    width:50px;
+}
+.details_head {
+    margin: 0 0;
+    padding: 5px 10px;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+    border-bottom: 1px solid #e1e1e1;
+}
+.details_head strong {
+    font-size: 0.875rem;
+    color: #7e147e;
+}
+.details_head p {
+    margin: 8px 0.875rem;
+    font-size: 0.8rem;
+    color: #666666;
+    line-height: 1rem;
+}
+.details_introduce {
+    padding: 5px 10px;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+    border-bottom: 1px solid #e1e1e1;
+}
+.details_introduce p {
+    font-size: 0.75rem;
+    color: #666666;
+}
+.details_introduce .details_introduce_text {
+    margin: 8px 0.875rem;
+    font-size: 0.8rem;
+    color: #666666;
+    line-height: 1rem;
+}
+.details_introduce .details_introduce_text p {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #666666;
+    line-height: 1rem;
+}
+.sign_up,
+.recommend {
+    width: 100px;
+    height:1.8rem;
+    line-height:1.8rem;
+    padding:2px;
+    position: fixed;
+    left: 50%;
+    bottom: 70px;
+    background: rgba(197, 106, 202, 0.8);
+    border-radius: 5px;
+    z-index: 999;
+    font-size: 0.875rem;
+    color: #ffffff;
+    margin-left: -100px;
+}
+.sign_up i,
+.recommend i{
+    margin-top:3px;
+}
+.recommend {
+    margin-left: 20px;
+    background: rgba(57, 58, 63, 0.8);
+}
+.patient_head {
+    margin: 0px;
+    padding: 10px 10px;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+    border-bottom: 1px solid #e1e1e1;
+}
+.patient_head h1 {
+    font-size: 0.875rem;
+    color: #7e147e;
+    font-weight: normal;
+}
+.patient_head h1 i {
+    margin-right: 5px;
+}
+.patient_form {
+    margin: 10px 0px;
+    padding: 10px 10px;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+.patient_form .prompt {
+    font-size: 0.725rem;
+    color: #999999;
+    text-align: right;
+}
+.patient_form ul {
+    padding: 0 10px;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+}
+.patient_form ul li {
+    position: relative;
+    padding: 10px 0;
+    border-bottom: 1px dashed #e1e1e1;
+    display: table;
+    clear: both;
+    width: 100%;
+}
+.patient_form ul li.required:after {
+    position: absolute;
+    top: 20px;
+    right: 5px;
+    content: "*";
+    color: #db99df;
+    font-size: 0.75rem;
+}
+.patient_form ul li strong {
+    font-size: 0.875rem;
+    color: #999999;
+    font-weight: normal;
+    width: 30%;
+}
+.patient_form ul li .in_text {
+    width: 65%;
+    height: 20px;
+    line-height: 1.2;
+    border: none;
+    font-size:0.75rem;
+    background: none;
+}
+.patient_form ul li textarea {
+	padding:5px;
+    width: 65%;
+    min-height: 50px;
+    line-height: 1.2;
+    border: none;
+    font-size:0.75rem;
+    background: none;
+    border:1px solid #e1e1e1;
+    border-radius:5px;
+}
+.patient_form ul li.patient_btn {
+    border-bottom: none;
+}
+.patient_form ul li strong {
+    float: left;
+}
+.patient_form ul li .record {
+    margin: 0 5px;
+    position: relative;
+    float: left;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.patient_form ul li .record i {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 1.0rem;
+    color: #db99df;
+    z-index: 99999;
+}
+.patient_form ul li .add_record {
+    margin: 0;
+    position: relative;
+    float: left;
+    font-size: 2.4rem;
+    color: #eaeaea;
+}
+.patient_form ul li .add_record input {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 40px;
+    opacity: 0;
+    z-index: 99999;
+}
+.patient_form ul li button {
+    margin: 10px auto 0 auto;
+    padding: 7px 15px;
+    background: #f3d5f5;
+    color: #7e147e;
+    display: table;
+    font-size: 0.75rem;
+    border-radius: 3px;
+    border: none;
+}
+.patient_form ul li.agreement a {
+    margin: 0 0 0 5px;
+    float: left;
+    color: #7e147e;
+    font-size: 0.625rem;
+}
+.patient_form ul li.agreement input {
+    float: left;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #e1e1e1;
+}
+.panel_search {
+    margin: 0px;
+}
+.panel_search .panel_search_body {
+    margin: 10px auto;
+    position: relative;
+    padding: 5px 15px;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+.panel_search .panel_search_body:after {
+    position: absolute;
+    top: 30%;
+    right: 5px;
+    content: "\e625";
+    font-size: 1.6rem;
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    color: #e1e1e1;
+}
+.panel_search .panel_search_body strong {
+    font-size: 0.875rem;
+    color: #000000;
+}
+.panel_search .panel_search_body p {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: #666666;
+    width: 94%;
+    line-height: 1rem;
+    min-height:40px;
+}
+.panel_search .panel_search_body span {
+    margin-top: 5px;
+    font-size: 0.75rem;
+    color: #919191;
+    width: 94%;
+    line-height: 1rem;
+}
+  /***************/
+ .panel_search .panel_search_body .highlight{
+  margin:0 2px;
+  color:#7e147e;
+  font-style:normal
+  }
+/*************/
+.search_introduce {
+    margin: 0px;
+    padding: 10px;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+.search_introduce strong {
+    font-size: 0.875rem;
+    color: #7e147e;
+    font-weight: normal;
+}
+.search_introduce .search_introduce_text {
+    margin-top: 5px;
+    font-size: 0.75rem;
+    color: #666666;
+    line-height: 1rem;
+}
+.search_introduce .search_introduce_text p {
+    margin-top: 5px;
+    font-size: 0.875rem;
+    color: #666666;
+    line-height: 1.8rem;
+}
+.search_introduce span {
+    margin-top: 10px;
+    font-size: 0.75rem;
+    color: #919191;
+    width: 94%;
+    display:block;
+    line-height: 1rem;
+}
+.info_head {
+    margin: 10px 0 0 0;
+    text-align: left;
+    background: #ffffff;
+    width:100%;
+    border-top: 1px solid #e1e1e1;
+}
+.info_head strong {
+    padding: 5px 0 0 0;
+    font-size: 0.875rem;
+    font-weight: normal;
+    text-align: center;
+    display: block;
+    float: left;
+    width:25%;
+    background: #ffffff;
+    border-bottom: 2px solid #ffffff;
+    line-height: 2.0rem;
+}
+.info_head strong:hover,
+.info_head strong.one {
+    border-bottom: 2px solid #db99df;
+    color: #7e147e;
+}
+.info_body {
+    margin: 0;
+    padding: 0 10px;
+    text-align: left;
+    background: #ffffff;
+    display: flex;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+.essential {
+    margin: 10px 0;
+    line-height: 1.2rem;
+    width: 100%;
+}
+.essential li {
+	padding:0.5rem 0;
+    font-size: 0.75rem;
+    display:table;
+    width: 100%;
+    border-bottom:1px dashed #e1e1e1;
+}
+.essential li strong {
+    width: 30%;
+    font-weight: normal;
+    color: #862386;
+    text-align:right;
+    float:left;
+    display:block;
+    font-weight: normal;
+}
+.essential li p {
+    width: 70%;
+    float:left;
+}
+.sponsor {
+    margin: 10px 0;
+    line-height: 1.2rem;
+    width: 100%;
+    display: none;
+}
+.sponsor li {
+	padding:0.5rem 0;
+    font-size: 0.75rem;
+    display:table;
+    width: 100%;
+    border-bottom:1px dashed #e1e1e1;
+}
+.sponsor li strong {
+    width: 25%;
+    font-weight: normal;
+    color: #862386;
+    text-align:right;
+    float:left;
+    display:block;
+    font-weight: normal;
+}
+.sponsor li p {
+    width: 75%;
+    float:left;
+}
+.experiment {
+    margin: 10px 0;
+    line-height: 1.8rem;
+    width: 100%;
+    display: none;
+}
+.experiment li {
+	padding:0.3rem 0;
+    font-size: 0.75rem;
+    display:table;
+    width: 100%;
+    border-bottom:1px dashed #e1e1e1;
+}
+.experiment li strong {
+    width: 25%;
+    font-weight: normal;
+    color: #862386;
+    text-align:right;
+    float:left;
+    display:block;
+    font-weight: normal;
+}
+.experiment li p {
+    width: 75%;
+    float:left;
+}
+/*************************/
+.experiment .tab {
+    margin:0.8rem 0;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 1px solid #e1e1e1;
+    max-width:640px;
+}
+.experiment .tab th,
+.experiment .tab td {
+    padding: 5px;
+    border: 1px solid #e1e1e1;
+    font-size:0.75rem;
+    text-align: center;
+    white-space:pre-wrap;
+    word-wrap:break-word;
+    width:33%;
+    color:#999999;
+}
+.experiment .tab th{
+    color:#333333;
+    font-weight: normal;}
+/*****************/
+
+.ex_resr {
+    margin:0 10px;
+    line-height: 1.2rem;
+}
+/**************************/
+.researcher {
+    margin: 0;
+    line-height: 1.8rem;
+    width: 100%;
+    display: none;
+}
+.researcher li {
+    font-size: 0.75rem;
+    display: flex;
+}
+.researcher li strong {
+	margin:1rem 0 0.3rem 0;
+    color: #862386;
+    text-align:center;
+    width:6rem;
+    display:table;
+    background:#f6dcf8;
+    font-weight: normal;
+    border-radius: 3px;
+}
+.researcher li .tab {
+    margin:0.8rem 0;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 1px solid #e1e1e1;
+    max-width:640px;
+}
+.researcher li .tab th,
+.researcher li .tab td {
+    padding: 5px;
+    border: 1px solid #e1e1e1;
+    font-size:0.75rem;
+    text-align: center;
+    white-space:pre-wrap;
+    word-wrap:break-word;
+    width:33%;
+    color:#999999;
+}
+.researcher li .tab th{
+    color:#333333;
+    font-weight: normal;}
+/*****************/
+.transition{
+    position: relative;
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 640px;
+	background:#ffffff url(../images/transition.png) no-repeat center top;
+	background-size: 100%;}
+.Continue{
+    position: fixed;
+    bottom: 60px;
+    padding: 5px 0;
+    width: 100%;
+    text-align: center;}
+   .Continue .patient_submit{
+   width:40%;
+   font-size: 1.0rem;
+   padding:10px 10px;
+   color:#ffffff;
+   background: rgba(44,47,63,0.8);
+   border:none;
+   cursor: pointer;
+    border-radius:5px;
+  }
+  
+.details_info {
+    margin: 10px 0;
+    padding: 5px 10px;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+.details_info h1 {
+	margin:1.0rem 0 0 0;
+	padding:.625rem 0;
+	font-size: .875rem;
+	font-weight: normal;
+    border-top: 1px solid #e1e1e1;
+}
+.agree_info {
+    margin: 10px 0;
+    padding: 5px 10px;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+.agree_info h1 {
+	margin:1.0rem 0 0 0;
+	font-size: 1.2rem;
+	text-align:center;
+	font-weight: normal;
+}
+.agree_info h2 {
+	margin:1.0rem 0 0 0;
+	padding:.625rem 0;
+	font-size: .875rem;
+    border-top: 1px solid #e1e1e1;
+}
+.agree_info p {
+	line-height:1.8rem;
+	font-size: .875rem;
+	color:#666666;
+}
+/************************************/
+.join_info {
+    margin: 10px 0px;
+    padding: 10px 10px;
+    text-align: left;
+    background: #ffffff;
+    display: block;
+    text-align:center;
+    border-top: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
+}
+.join_info figure {
+    padding:10px 0;
+    text-align: center;
+    background: #ffffff;
+    display: block;
+}
+.join_info ul li h1{
+    font-size: 1.2rem;
+    text-align:center;
+    color: #666666;
+}
+.join_info ul li {
+    margin: 10px;
+    font-size: 1rem;
+    text-align:center;
+    color: #7e147e;
+}
+.join_info .patient_submit{
+   margin:3rem auto;
+   width:60%;
+   font-size: 1.0rem;
+   padding:10px 10px;
+   color:#ffffff;
+   background: rgba(44,47,63,0.8);
+   border:none;
+   display: block;
+   cursor: pointer;
+   border-radius:5px;
+  }
+  /***************************2016-09-18***********************************/  
+.introduce_head {
+    margin: 10px 0 0 0;
+    text-align: left;
+    background: #ffffff;
+    width:100%;
+    border-top: 1px solid #e1e1e1;
+}
+.introduce_head strong {
+    padding: 5px 0 0 0;
+    font-size: 0.875rem;
+    font-weight: normal;
+    text-align: center;
+    display: block;
+    float: left;
+    width:33.3%;
+    background: #ffffff;
+    border-bottom: 2px solid #e1e1e1;
+    line-height: 2.0rem;
+}
+.introduce_head strong:hover,
+.introduce_head strong.one {
+    border-bottom: 2px solid #db99df;
+    color: #7e147e;
+}
+  /**************************************************************/ 

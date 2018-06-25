@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="member" namespace="/private" extends="public">
+
+		<!-- 支付相关action -->
+		<action name="tenpay_*" class="TenpayAction" method="{1}">
+			<result name="success">/WEB-INF/jsps/charge/{1}.jsp</result>
+		</action>
+		<!-- 账户相关action -->
+		<action name="account_*" class="AccountAction" method="{1}">
+			<result name="goLogin" type="redirectAction">/hotel/public/GoLogin.Q</result>
+			<result name="userInfo">/WEB-INF/jsps/private/account/userInfo.jsp</result>
+			<result name="modifypw">/WEB-INF/jsps/private/account/modifypw.jsp</result>
+			<result name="addrMgt">/WEB-INF/jsps/private/account/addressMgt.jsp</result>
+			<result name="toAddrMgt" type="redirectAction">account_addrMgt.Q</result>
+			<result name="useradd">/weixin/useradd.jsp</result>
+			<result name="couponMgt">/WEB-INF/jsps/private/account/couponMgt.jsp</result>
+			<result name="ordersMgt">/WEB-INF/jsps/private/account/ordersMgt.jsp</result>
+			<result name="ok" type="redirectAction">/private/account_ordersMgt.Q</result>
+			<result name="ordersDetai">/WEB-INF/jsps/private/account/ordersDetail.jsp</result>
+			<result name="favoriteMgt">/WEB-INF/jsps/private/account/favoriteMgt.jsp</result>
+			<result name="commentsMgt">/WEB-INF/jsps/private/account/commentsMgt.jsp</result>
+			<result name="commentsInput">/WEB-INF/jsps/private/account/commentsInput.jsp</result>
+			<result name="commentsDetail">/WEB-INF/jsps/private/account/commentsDetail.jsp</result>
+			<result name="commentsOk" type="redirectAction">account_commentsMgt.Q</result>
+			<result name="returnProductsMgt">/WEB-INF/jsps/private/account/returnProductsMgt.jsp</result>
+			<result name="returnProductsDetail">/WEB-INF/jsps/private/account/returnProductsDetail.jsp</result>
+			<result name="shopping_confirm" type="redirectAction">shopping_confirm</result>
+			<result name="tofavoriteMgt" type="redirectAction">account_favoriteMgt.Q</result>
+			
+		</action>
+		
+		<!-- 支付 -->
+		<action name="payment_*" class="PaymentAction" method="{1}">
+		<result name="ordersMgt" type="redirectAction">/private/account_ordersMgt.Q</result>
+		<result name="error">/WEB-INF/private/error.jsp</result>
+		<result name="ok" type="redirectAction">/private/account_ordersMgt.Q</result>
+		</action>
+		
+		<!-- 购物车 -->
+		<action name="shopping_*" class="shoppingAction" method="{1}">
+			<result name="list">/WEB-INF/jsps/private/shoppingcart/shopping.jsp</result>
+			<result name="add">/WEB-INF/jsps/private/shoppingcart/shoppadd.jsp</result>
+			<result name="order">/WEB-INF/jsps/private/shoppingcart/shopporder.jsp</result>
+			<result name="commit">/WEB-INF/jsps/private/shoppingcart/shoppcommit.jsp</result>
+			<result name="toList" type="redirectAction">shopping_list</result>
+			<result name="toMyOrder" type="redirectAction">account_ordersMgt</result>
+		</action>
+		
+		<action name="pri_*" class="PrivateXAction" method="{1}">
+			<result name="userReg">/weixin/userReg.jsp</result>
+			<result name="userCenter">/weixin/userCenter.jsp</result>
+			<result name="userCenter-car">/weixin/car/userCenter.jsp</result>
+			<result name="confirmAddress">/weixin/confirmAddress.jsp</result>
+			<result name="confirmOrder">/weixin/orderConfirm.jsp</result>
+			<!-- 分销相关 -->
+			<result name="myfenxiao">/weixin/myfenxiao.jsp</result>
+			<result name="joinus">/weixin/joinus.jsp</result>
+			<!-- 车险平台 -->
+			<result name="car-confirmAddress">/weixin/car/confirmAddress.jsp</result>
+			<result name="car-confirmOrder">/weixin/car/orderConfirm.jsp</result>
+			<result name="car-insurenceConfirmOrder">/weixin/car/carinsurenceOrderConfirm.jsp</result>
+			<result name="submitCarInfoFinish">/weixin/car/carinsurance.jsp</result>
+			<result name="car-washLog">/weixin/car/washlogs.jsp</result>
+		</action>
+		
+	</package>
+</struts>

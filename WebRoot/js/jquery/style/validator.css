@@ -1,0 +1,71 @@
+.onShow
+{   
+	display:none;
+	border:none;
+    height:22px;
+    background:none;
+    padding-left:20px;
+	font-size: 12px;
+	line-height:20px; 
+	vertical-align:middle;
+	color:#333;
+	margin:4px 0 0 4px;
+    width:auto;
+    padding:1px 1px 1px 20px;
+    text-align:left;
+    height:0px;
+    overflow:hidden;
+}
+.onFocus
+{   border:none;
+    height:22px;
+    background:none;
+    padding-left:20px;
+	font-size: 12px;
+	line-height:20px; 
+	vertical-align:middle;
+	color:#110066;
+	margin:4px 0 0 4px;
+    width:auto;
+    padding:1px 1px 1px 20px;
+    text-align:left;
+    height:20px;
+    overflow:hidden;
+}
+
+.onError
+{   border:1px solid #FFDEAF;
+    height:20px;
+    background:#FFFFF2 url(../images/fgr13_c9.jpg) no-repeat 2px 4px;
+    padding-left:20px;
+	font-size: 12px;
+	line-height:20px; 
+	vertical-align:middle;
+	color:#FF6600;
+	margin:4px 0 0 4px;
+    padding:1px 1px 1px 20px;
+    text-align:left;
+}
+.onCorrect
+{
+    display:none;
+    background:#E9FFEB url(../images/onCorrect.gif) no-repeat;
+    padding-left:25px;
+	font-size: 12px;
+	line-height:22px; 
+	vertical-align:middle;
+	height:0px;
+    overflow:hidden;
+}
+.onLoad
+{
+	display:none;
+	display:none;
+    background:#E9FFEB url(../images/onLoad.gif) no-repeat 3px 3px;
+    padding-left:25px;
+	font-size: 12px;
+	line-height:22px; 
+	vertical-align:middle;
+	height:0px;
+    overflow:hidden;
+} 

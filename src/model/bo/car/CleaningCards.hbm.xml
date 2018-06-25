@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="model.bo.car.CleaningCards"
+        table="car_cleaningCards"
+        lazy="false"
+        dynamic-update="true"
+        dynamic-insert="true"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="long"
+            unsaved-value="0"
+        >
+            <generator class="native">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-CleaningCards.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="userName"
+            type="string"
+            update="true"
+            insert="true"
+            column="userName"
+        />
+
+        <property
+            name="serviceId"
+            type="long"
+            update="true"
+            insert="true"
+            column="serviceId"
+        />
+
+        <property
+            name="cardCode"
+            type="string"
+            update="true"
+            insert="true"
+            column="cardCode"
+        />
+
+        <property
+            name="openId"
+            type="string"
+            update="true"
+            insert="true"
+            column="openId"
+        />
+
+        <property
+            name="status"
+            type="int"
+            update="true"
+            insert="true"
+            column="status"
+        />
+
+        <property
+            name="generateDate"
+            type="string"
+            update="true"
+            insert="true"
+            column="generateDate"
+        />
+
+        <property
+            name="expireDate"
+            type="string"
+            update="true"
+            insert="true"
+            column="expireDate"
+        />
+
+        <property
+            name="leftPoints"
+            type="int"
+            update="true"
+            insert="true"
+            column="leftPoints"
+        />
+
+        <property
+            name="totalPoints"
+            type="int"
+            update="true"
+            insert="true"
+            column="totalPoints"
+        />
+
+        <property
+            name="cardType"
+            type="string"
+            update="true"
+            insert="true"
+            column="cardType"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-CleaningCards.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

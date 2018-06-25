@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<description>WFSC System</description>
+	<display-name>WFSC System</display-name>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+		/WEB-INF/conf/spring/dataAccessContext_mysql.xml, 
+		/WEB-INF/conf/spring/*-service.xml,
+		/WEB-INF/conf/spring/*-beans.xml
+		</param-value>
+	</context-param>
+
+	<!-- session监听器 -->
+	<listener>
+		<listener-class>com.wfsc.listener.CupidSessionListener</listener-class>
+	</listener>
+	<!-- Spring 刷新Introspector防止内存泄露 -->
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>com.base.CupidStartupListener</listener-class>
+	</listener>
+	<filter>
+		<filter-name>redisp</filter-name>
+		<filter-class>com.base.filters.ReDispatcherFilter</filter-class>
+		<init-param>
+			<param-name>includeServlets</param-name>
+			<param-value>getCodeImage,DisplayChart</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>redisp</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- 请不要擅自改动filter的顺序，否则系统会出现乱码！！！-->
+	<!-- 配置Struts2 -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<!--<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>-->
+		<filter-class>com.base.filters.UeditorStrutsFilter</filter-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>
+			struts-default.xml,
+			struts-plugin.xml,
+			../conf/struts/struts2.xml</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+  		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+
+	<!-- URL重写 -->
+	<filter>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+		<init-param>
+		<param-name>logLevel</param-name>
+		<param-value>WARN</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>codeImage</servlet-name>
+		<servlet-class>com.base.tools.CodeImageServlet</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CXFServlet</servlet-name>
+		<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	
+  <servlet>
+    <servlet-name>FileLoadServelt</servlet-name>
+    <servlet-class>com.wfsc.servlet.FileLoadServelt</servlet-class>
+  </servlet>
+	
+
+	<!-- add by wjdeng reportIMG URL -->
+	<servlet>
+		<servlet-name>DisplayChart</servlet-name>
+		<servlet-class>org.jfree.chart.servlet.DisplayChart</servlet-class>
+	</servlet>
+
+ <servlet-mapping>
+    <servlet-name>FileLoadServelt</servlet-name>
+    <url-pattern>/fileLoad</url-pattern>
+  </servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>DisplayChart</servlet-name>
+		<url-pattern>/DisplayChart</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>codeImage</servlet-name>
+		<url-pattern>/getCodeImage</url-pattern>
+	</servlet-mapping>
+
+	<!-- CXF过滤的webservice接口URL -->
+	<servlet-mapping>
+		<servlet-name>CXFServlet</servlet-name>
+		<url-pattern>/ws/*</url-pattern>
+	</servlet-mapping>
+
+	<session-config>
+		<session-timeout>300000</session-timeout>
+	</session-config>
+
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/struts-tags</taglib-uri>
+			<taglib-location>/WEB-INF/tlds/struts-tags.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/struts-dojo-tags</taglib-uri>
+			<taglib-location>/WEB-INF/tlds/struts-dojo-tags.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/WEB-INF/x.tld</taglib-uri>
+			<taglib-location>/WEB-INF/tlds/x.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/WEB-INF/c.tld</taglib-uri>
+			<taglib-location>/WEB-INF/tlds/c.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/WEB-INF/fmt.tld</taglib-uri>
+			<taglib-location>/WEB-INF/tlds/fmt.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/WEB-INF/fn.tld</taglib-uri>
+			<taglib-location>/WEB-INF/tlds/fn.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/WEB-INF/cust.tld</taglib-uri>
+			<taglib-location>/WEB-INF/tlds/cust.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/WEB-INF/zysq.tld</taglib-uri>
+			<taglib-location>/WEB-INF/tlds/cust.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+	<welcome-file-list>
+		<welcome-file>/toindex.jsp</welcome-file>
+	</welcome-file-list>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/defaultError.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>400</error-code>
+		<location>/notFound.Q</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/notFound.Q</location>
+	</error-page>
+
+</web-app>

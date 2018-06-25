@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.locale" value="zh_CN" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 对资源类文件放行，不走过滤器 -->
+	<constant name="struts.action.excludePattern" value="/res/.*,/css/.*,/images/.*,/js/.*,/services/.*" />
+	<constant name="struts.ui.theme" value="simple" />
+	<!-- 支持通配符 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.objectFactory.spring.autoWire" value="name" />
+	<constant name="struts.action.extension" value="Q"></constant>
+	<constant name="struts.multipart.saveDir" value="/tmp"></constant>
+	<!-- 最大5M -->
+	<constant name="struts.multipart.maxSize" value="5000000"></constant>
+	<include file ="struts-default.xml" />
+	<include file="../conf/struts/public.xml" />
+	<!-- 需要权限的action 	-->
+	<include file="../conf/struts/private.xml" />
+	<!-- 需要权限的action 	-->
+	<include file="../conf/struts/admin.xml" />
+	<!-- 与微信对接的action 	
+	-->
+	<include file="../conf/struts/weixin.xml" />
+
+
+	<include file="../conf/struts/drug.xml" />
+
+</struts>

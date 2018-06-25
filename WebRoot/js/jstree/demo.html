@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>demo.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="themes/default/style.min.css" />
+    <script src="../jquery/jquery.js"></script>
+    <script src="jstree.min.js"></script>
+	<script type="text/javascript">
+	function loadTree(){
+		$('#myTree').jstree({ 'core' : {
+		    'data' : [
+		       { "id" : "ajson1", "parent" : "#", "text" : "IBM" },
+		       { "id" : "ajson2", "parent" : "#", "text" : "联想" },
+		       { "id" : "ajson3", "parent" : "ajson2", "text" : "华东区" },
+		       { "id" : "ajson4", "parent" : "ajson2", "text" : "华南区" },
+		       { "id" : "ajson5", "parent" : "ajson4", "text" : "A组" },
+		       { "id" : "ajson6", "parent" : "ajson4", "text" : "B组" },
+		    ]
+		} }).on('changed.jstree', function (e, data) {
+		    var i, j, r = [];
+		    for(i = 0, j = data.selected.length; i < j; i++) {
+		      var snode = data.instance.get_node(data.selected[i]);
+		      r.push(snode.text + "|" + snode.id);
+		    }
+		    $('#event_result').val('Selected: ' + r.join(', '));
+		 });
+	}
+	
+		
+	</script>
+
+  </head>
+  
+  <body onload="loadTree()">
+    This is my HTML page. <br>
+    
+    <div id="myTree"></div>
+    <input type="text" id="event_result" size="100">
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 43</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="32" height="32"></rect>
+    </defs>
+    <g id="phone" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="项目详情" transform="translate(-572.000000, -1290.000000)">
+            <g id="Group-6" transform="translate(0.000000, 1170.000000)">
+                <g id="Group-3" transform="translate(556.000000, 104.000000)">
+                    <g id="Group-43" transform="translate(14.000000, 14.000000)">
+                        <g id="Rectangle-50" opacity="0">
+                            <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            <rect stroke="#979797" stroke-width="1" x="0.5" y="0.5" width="31" height="31"></rect>
+                        </g>
+                        <g id="Group-24" transform="translate(2.000000, 2.000000)" fill="#DB99DF">
+                            <rect id="Rectangle-25" x="0" y="12" width="28" height="4" rx="2"></rect>
+                            <rect id="Rectangle-25" transform="translate(14.000000, 14.000000) rotate(90.000000) translate(-14.000000, -14.000000) " x="0" y="12" width="28" height="4" rx="2"></rect>
+                        </g>
+                    </g>
+                    <g id="Group-2" stroke="#958FDD" stroke-width="2" opacity="0.5">
+                        <rect id="Rectangle" x="1" y="1" width="58" height="58" rx="8"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

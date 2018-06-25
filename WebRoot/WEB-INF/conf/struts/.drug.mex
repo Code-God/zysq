@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="drug" location="225,107" size="280,1295">
+    <action name="wx_*" location="65,85" size="150,125">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="{1}.jsp" />
+      </result>
+      <result name="detail">
+        <resourceEdge source="detail" routing="0" target="detail.jsp" />
+      </result>
+      <result name="testResult9x">
+        <resourceEdge source="testResult9x" routing="0" target="wxTest9xResult.jsp" />
+      </result>
+      <result name="zhaohuList">
+        <resourceEdge source="zhaohuList" routing="0" target="zhaohuList.jsp" />
+      </result>
+      <result name="hongBaoIndex">
+        <resourceEdge source="hongBaoIndex" routing="0" target="hongbaoIndex.jsp" />
+      </result>
+    </action>
+    <action name="user_*" location="65,740" size="150,146">
+      <result name="medicineInfo">
+        <resourceEdge source="medicineInfo" routing="0" target="medicine_information.jsp" />
+      </result>
+      <result name="patientInfo">
+        <resourceEdge source="patientInfo" routing="0" target="patient_information.jsp" />
+      </result>
+      <result name="perfectUserInfo">
+        <resourceEdge source="perfectUserInfo" routing="0" target="user_information.jsp" />
+      </result>
+      <result name="qrCode">
+        <resourceEdge source="qrCode" routing="0" target="qr_code.jsp" />
+      </result>
+      <result name="userCenter">
+        <resourceEdge source="userCenter" routing="0" target="user.jsp" />
+      </result>
+      <result name="moreRecommend">
+        <resourceEdge source="moreRecommend" routing="0" target="patient_state.jsp" />
+      </result>
+    </action>
+    <action name="qualification_*" location="65,967" size="150,41">
+      <result name="certificate">
+        <resourceEdge source="certificate" routing="0" target="certificate.jsp" />
+      </result>
+    </action>
+    <action name="index_*" location="65,1100" size="150,125">
+      <result name="index">
+        <resourceEdge source="index" routing="0" target="drug-index.jsp" />
+      </result>
+      <result name="detailed">
+        <resourceEdge source="detailed" routing="0" target="drug-disease-details.jsp" />
+      </result>
+      <result name="more">
+        <resourceEdge source="more" routing="0" target="drug-disease-list.jsp" />
+      </result>
+      <result name="indexsearch">
+        <resourceEdge source="indexsearch" routing="0" target="drup-search-list.jsp" />
+      </result>
+      <result name="jsureDetailed">
+        <resourceEdge source="jsureDetailed" routing="0" target="drug-search-details.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="{1}.jsp" path="/wx/{1}.jsp" location="570,219" size="150,55" />
+  <webResource name="detail.jsp" path="/wx/detail.jsp" location="570,114" size="150,55" />
+  <webResource name="wxTest9xResult.jsp" path="/wx/wxTest9xResult.jsp" location="290,9" size="150,55" />
+  <webResource name="zhaohuList.jsp" path="/WEB-INF/jsps/admin/wx/zhaohuList.jsp" location="10,219" size="150,55" />
+  <webResource name="hongbaoIndex.jsp" path="/weixin/hongbao/hongbaoIndex.jsp" location="10,324" size="150,55" />
+  <webResource name="medicine_information.jsp" path="/weixin/drug/medicine_information.jsp" location="570,884" size="150,55" />
+  <webResource name="patient_information.jsp" path="/weixin/drug/patient_information.jsp" location="570,744" size="150,55" />
+  <webResource name="user_information.jsp" path="/weixin/drug/user_information.jsp" location="570,639" size="150,55" />
+  <webResource name="qr_code.jsp" path="/weixin/drug/qr_code.jsp" location="570,534" size="150,55" />
+  <webResource name="user.jsp" path="/weixin/drug/user.jsp" location="570,429" size="150,55" />
+  <webResource name="patient_state.jsp" path="/weixin/drug/patient_state.jsp" location="570,324" size="150,55" />
+  <webResource name="certificate.jsp" path="/weixin/drug/certificate.jsp" location="570,1059" size="150,55" />
+  <webResource name="drug-index.jsp" path="/weixin/drug/drug-index.jsp" location="10,1129" size="150,55" />
+  <webResource name="drug-disease-details.jsp" path="/weixin/drug/drug-disease-details.jsp" location="10,1234" size="150,55" />
+  <webResource name="drug-disease-list.jsp" path="/weixin/drug/drug-disease-list.jsp" location="10,1339" size="150,55" />
+  <webResource name="drup-search-list.jsp" path="/weixin/drug/drup-search-list.jsp" location="290,1444" size="150,55" />
+  <webResource name="drug-search-details.jsp" path="/weixin/drug/drug-search-details.jsp" location="570,1234" size="150,55" />
+</Struts2Diagram>
+

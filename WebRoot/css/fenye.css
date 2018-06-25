@@ -1,0 +1,12 @@
+@charset "utf-8";
+.fenye_css{ background:url(../images/s_r23_c12.jpg) repeat-x; height:35px; overflow:hidden}
+.fenye_coun h1{ background:url(../images/w_r24_c16.jpg) no-repeat 8px 14px; line-height:38px; font:100 12px/38px normal; text-indent:24px; float:left}
+.fenye_coun h2{ font:100 12px Arial, Helvetica, sans-serif; float:left; margin:10px 20px}
+.h2_span{ border:#D3D3D3 1px solid; width:auto; height:18px; margin:0 3px; overflow:hidden; display:block; float:left}
+.fenye_coun h2 em{ border:#D3D3D3 0px solid; width:auto; height:22px; margin:0 3px; font:700 12px/20px Arial, Helvetica, sans-serif; display:block; float:left}
+.h2_span i{border:#fff 1px solid; padding:2px 4px 4px 4px; height:10px; background: url(../images/3_r25_c26.jpg) repeat-x; font:100 12px/12px Arial, Helvetica, sans-serif;display:block; float:left}
+.h2_span_on{ border:#95BFDF 1px solid; width:auto; height:18px; margin:0 3px; cursor:pointer; display:block; float:left}
+.h2_span_on i{border:#fff 1px solid; padding:2px 4px 4px 4px; height:10px; background: url(../images/2_r24_c24.jpg) repeat-x; font:100 12px/12px Arial, Helvetica, sans-serif;display:block; float:left}
+.h2_span_on a{ text-decoration: none }
+.h2_span_on a:hover{ text-decoration: none; color:#036}
+.feng_img{  padding:1px; float:left }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- Add packages here -->
+	<package name="wx" namespace="/wx" extends="struts-default">
+		<interceptors>
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="fileUpload">
+					<param name="allowedTypes">image/bmp,image/jpg,image/png,image/gif,image/jpeg,image/JPG,image/JPEG,image/pjpeg</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack" />
+
+		<global-results>
+			<result name="info">/info.jsp</result>
+			<result name="error">/defaultError.jsp</result>
+			<result name="statusError">/statusError.jsp</result>
+		</global-results>
+		
+		<action name="wx_*" class="WeixinAction" method="{1}">
+			<result name="success">/wx/{1}.jsp</result>
+			<result name="detail">/wx/detail.jsp</result>
+			<result name="testResult9x">/wx/wxTest9xResult.jsp</result>
+			<result name="zhaohuList">/WEB-INF/jsps/admin/wx/zhaohuList.jsp</result>
+			<!-- 红包领用页面 -->
+			<result name="hongBaoIndex">/weixin/hongbao/hongbaoIndex.jsp</result>
+			
+			<!-- 二维码 -->
+			<result name="to_qrCode">/weixin/drug/qr_code.jsp</result>
+		</action>
+
+	</package>
+</struts>

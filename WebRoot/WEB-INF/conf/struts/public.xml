@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="default" extends="struts-default">
+		<default-action-ref name="notFound" />
+		<action name="notFound">
+			<result>/defaultError.jsp</result>
+		</action>
+	</package>
+
+	<!-- Add packages here -->
+	<package name="public" namespace="/public" extends="struts-default">
+		<interceptors>
+			<interceptor name="memberAuth" class="com.wfsc.interceptors.SessionInterceptor">
+			</interceptor>
+
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="memberAuth" />
+				<interceptor-ref name="defaultStack" />
+				<!-- 异常堆栈日志记录，便于开发时使用，后期需要对异常统一处理 -->
+				<interceptor-ref name="exception">
+                  <param name="logEnabled">true</param>
+                  <param name="logLevel">info</param>             
+              	</interceptor-ref>
+				<interceptor-ref name="fileUpload">
+					<param name="allowedTypes">image/bmp,image/jpg,image/png,image/gif,image/jpeg,image/JPG,image/JPEG,image/pjpeg</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="myStack" />
+
+		<default-action-ref name="indexAction" />
+		<global-results>
+			<result name="login">/WEB-INF/jsps/public/login/login.jsp</result>
+			<result name="wxlogin">/weixin/login.jsp</result>
+			<result name="wxreg">/weixin/userReg.jsp</result>
+			<result name="info">/info.jsp</result>
+			<result name="error">/defaultError.jsp</result>
+			<result name="statusError">/statusError.jsp</result>
+		</global-results>
+
+		<action name="GoLogin" class="loginAction" method="goLogin">
+			<result name="success">/WEB-INF/jsps/public/login/login.jsp</result>
+			<result type="redirectAction" name="index">index</result>
+		</action>
+		
+		<action name="LoginAction" class="loginAction" method="login">
+			<result name="success">/WEB-INF/jsps/public/login/loginResult.jsp</result>
+			<result type="chain" name="error">GoLogin</result>
+		</action>
+
+		<action name="Logout" class="loginAction" method="logout">
+			<result type="redirectAction" name="success">index</result>
+		</action>
+
+		<action name="regist_*" class="RegistAction" method="{1}">
+			<result name="gotoreg">/WEB-INF/jsps/public/user/register.jsp</result>
+			<result name="success">/WEB-INF/jsps/public/user/confirm.jsp</result>
+		</action>
+
+		<action name="go_*" class="GotoAction" method="gotoPage">
+			<result>/WEB-INF/jsps/{1}.jsp</result>
+		</action>
+
+		<action name="SearchAction_*" class="SearchAction" method="{1}">
+			<result>/WEB-INF/jsps/searchResult/{1}.jsp</result>
+			<result name="more">/WEB-INF/jsps/searchResult/member.jsp</result>
+		</action>
+
+		<action name="user_*" class="UserAction" method="{1}">
+			<result>/WEB-INF/jsps/user/user_{1}.jsp</result>
+		</action>
+
+		<action name="index" class="indexAction" method="index">
+			<result name="success">/WEB-INF/jsps/index.jsp</result>
+		</action>
+		<action name="list" class="listAction" method="list">
+			<result name="productList">/WEB-INF/jsps/public/product/productList.jsp</result>
+			<result name="noresult">/WEB-INF/jsps/public/product/noResult.jsp</result>
+			<result name="catnoresult">/WEB-INF/jsps/public/product/catNoResult.jsp</result>
+		</action>
+		
+		<action name="list_*" class="listAction" method="{1}">
+		</action>
+		
+		<action name="details" class="detailsAction" method="index">
+			<result name="success">/WEB-INF/jsps/public/product/details.jsp</result>
+		</action>
+		<action name="details_*" class="detailsAction" method="{1}">
+		</action>
+		
+		<action name="productcat_*" class="ProductCatAction" method="{1}">
+		</action>
+		<action name="wx_*" class="WeixinAction" method="{1}">
+			<result name="page" type="redirect">
+				${url}
+			</result>
+			<result name="fxApply">/weixin/fenxiao/fxApply.jsp</result>
+		</action>
+		
+		<!-- 城市定位 -->
+		<action name="area_*" class="AreaAction" method="{1}">
+		</action>
+		
+		<action name="pub_*" class="PublicxAction" method="{1}">
+			<result name="success">/weixin/{1}.jsp</result>
+			<result name="wxProductDetail">/weixin/product.jsp</result>
+			<result name="wxCarProductDetail">/weixin/car/product.jsp</result>
+			<result name="index">/weixin/index.jsp</result>
+			<result name="index-thumb">/weixin/index-thumb.jsp</result>
+			<result name="index-one">/weixin/index-one.jsp</result>
+			<result name="userCenter">/weixin/userCenter.jsp</result>
+			<result name="car-index">/weixin/car/index.jsp</result>
+			<result name="drug-index" type="redirectAction">../drug/index_toIndex.Q</result>
+			<result name="drug-list" type="redirectAction">../drug/index_getMoreDisease.Q</result>
+			<result name="drug-patientinfo" type="redirectAction">../drug/user_patientInfo.Q</result>
+			<result name="car-ins">/weixin/car/carinsurance.jsp</result>
+			<result name="car-couponList">/weixin/car/couponList.jsp</result>
+		</action>
+		
+		<action name="car_*" class="CarAction" method="{1}">
+			<result name="success">/weixin/car/{1}.jsp</result>
+		</action>
+		
+	</package>
+</struts>

@@ -1,0 +1,45 @@
+.list-item{
+    background-color: #ffffff;
+    margin-bottom: 5px;
+}
+.list-item a{
+    display: block;
+    padding: 15px 125px 15px 15px;
+    position: relative;
+}
+.list-item a h2{
+    font-weight: 500;
+    font-size: 15px;
+    color: #58676C;
+    line-height: 21px;
+}
+.list-item-label{
+    padding-left: 22px;
+    position: relative;
+    font-size: 12px;
+    color: #B5BDC1;
+    margin-top: 10px;
+}
+.list-item-label i{
+    width: 29px;
+    height: 29px;
+    display: inline-block;
+    background: url("../imgs/icons.png") no-repeat;
+    background-position: -0px -170px;
+    position: absolute;
+    left: 0;
+    top:2px;
+}
+.list-item-img{
+    width: 100px;
+    height: 67px;
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    top:15px;
+    right: 15px;
+}
+.list-item-img img{
+    max-width: 100%;
+    max-height: 100%;
+}
